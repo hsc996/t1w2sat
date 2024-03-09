@@ -63,6 +63,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-end;
 
 }
 
@@ -72,10 +73,34 @@ main.row {
     flex-grow: 2;
 }
 
+a:hover {
+    background-color: var(--blue-darker);
+    animation: spin 1s infinite linear;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        color: var(--blue-lighter)
+    }
+    50% {
+        color: var(--blue-darker)
+    }
+    100% {
+        transform: rotate(360deg);
+        color: var(--blue-lighter)
+    }
+}
+
+h1:hover {
+    animation: bounce 1s linear;
+}
+
 /* Desktop styling */
 @media screen and (min-width:500px) {
     body {
-        background-color: bisque;
+        background-color:var(--blue-dark)
     }
 
     main.row {
@@ -85,7 +110,7 @@ main.row {
     }
 
     .column {
-        width: 30dvw;
+        width: 45dvw;
         height: 50dvh;
     }
 }
